@@ -14,9 +14,12 @@ add_executable(KPoly)
 
 set(source "src")
 set(kpoly "kpoly")
+set(gui "gui")
 
 target_sources(KPoly
     PRIVATE ${source}/${kpoly}/Application.cpp
+    PRIVATE ${source}/${gui}/Window.hpp
+    PRIVATE ${source}/${gui}/Window.cpp
 )
 
 target_link_libraries(KPoly
