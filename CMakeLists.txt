@@ -18,6 +18,11 @@ set(gui "gui")
 
 target_sources(KPoly
     PRIVATE ${source}/${kpoly}/Application.cpp
+    PRIVATE ${source}/${kpoly}/Global.hpp
+    PRIVATE ${source}/${kpoly}/Parser.hpp
+    PRIVATE ${source}/${kpoly}/Parser.cpp
+    PRIVATE ${source}/${kpoly}/Polynomial.hpp
+    PRIVATE ${source}/${kpoly}/Polynomial.cpp
     PRIVATE ${source}/${gui}/Window.hpp
     PRIVATE ${source}/${gui}/Window.cpp
 )

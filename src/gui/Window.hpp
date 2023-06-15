@@ -25,7 +25,7 @@ private:
     QLabel* m_resultLbl;
 };
 
-inline const QString Window::P_POLY_STR = "P(x)=";
-inline const QString Window::Q_POLY_STR = "Q(x)=";
+inline const QString Window::P_POLY_STR = "P(x) = ";
+inline const QString Window::Q_POLY_STR = "Q(x) = ";
 
 #endif // WINDOW_HPP
