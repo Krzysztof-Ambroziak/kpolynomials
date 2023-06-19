@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+class Polynomial;
 class QLabel;
 class QLineEdit;
 class QPushButton;
@@ -12,6 +13,9 @@ public:
     explicit Window(QWidget* parent = nullptr);
 
 private:
+    void connectSlots();
+
+private:
     static const QString P_POLY_STR;
     static const QString Q_POLY_STR;
     
@@ -19,13 +23,14 @@ private:
     QLineEdit* m_pPolyEdt;
     QLabel* m_qPolyLbl;
     QLineEdit* m_qPolyEdt;
+    QPushButton* m_negateBtn;
     QPushButton* m_additionBtn;
     QPushButton* m_subtractionBtn;
     QPushButton* m_multiplicationBtn;
     QLabel* m_resultLbl;
 };
 
-inline const QString Window::P_POLY_STR = "P(x) = ";
-inline const QString Window::Q_POLY_STR = "Q(x) = ";
+inline const QString Window::P_POLY_STR = "P(x) =";
+inline const QString Window::Q_POLY_STR = "Q(x) =";
 
 #endif // WINDOW_HPP
