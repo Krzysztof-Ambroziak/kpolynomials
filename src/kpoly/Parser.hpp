@@ -33,6 +33,6 @@ private:
     static const QRegularExpression PATTERN;
 };
 
-inline const QRegularExpression Parser::PATTERN("^-?\\d+([xX](\\^\\d+)?)?(\\+-?\\d+([xX](\\^\\d+)?)?)*$");
+inline const QRegularExpression Parser::PATTERN("^-?\\d?([xX](\\^\\d+)?)?(\\+-?\\d?([xX](\\^\\d+)?)?)*$");
 
 #endif // PARSER_HPP

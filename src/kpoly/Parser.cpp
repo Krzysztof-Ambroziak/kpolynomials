@@ -35,6 +35,8 @@ void Parser::removeDoubledPlusSign(QString& str) {
 }
 
 void Parser::addUnitDigit(QString& str) {
+    if(str.length() >= 1 && str[0] == 'x')
+        str.insert(0, '1');
     str.replace("-x", "-1x");
     str.replace("+x", "+1x");
 }
