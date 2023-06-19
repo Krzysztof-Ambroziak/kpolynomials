@@ -63,22 +63,41 @@ void Window::connectSlots() {
         m_qPolyLbl->setText(Q_POLY_STR + ' ' + Parser::parse(str));
     });
     QObject::connect(m_negateBtn, &QPushButton::clicked, m_resultLbl, [this]() {
-        const auto& p = Parser::parse(m_pPolyEdt->text());
-        m_resultLbl->setText(m_negateBtn->text() + " = " + -p);
+        const auto& text = m_pPolyEdt->text();
+        
+        if(!text.isEmpty()) {
+            const auto& p = Parser::parse(text);
+            m_resultLbl->setText(m_negateBtn->text() + " = " + -p);
+        }
     });
     QObject::connect(m_additionBtn, &QPushButton::clicked, m_resultLbl, [this]() {
-        const auto& p = Parser::parse(m_pPolyEdt->text());
-        const auto& q = Parser::parse(m_qPolyEdt->text());
-        m_resultLbl->setText(m_additionBtn->text() + " = " + (p + q));
+        const auto& textP = m_pPolyEdt->text();
+        const auto& textQ = m_qPolyEdt->text();
+        
+        if(!textP.isEmpty() && !textQ.isEmpty()) {
+            const auto& p = Parser::parse(textP);
+            const auto& q = Parser::parse(textQ);
+            m_resultLbl->setText(m_additionBtn->text() + " = " + (p + q));
+        }
     });
     QObject::connect(m_subtractionBtn, &QPushButton::clicked, m_resultLbl, [this]() {
-        const auto& p = Parser::parse(m_pPolyEdt->text());
-        const auto& q = Parser::parse(m_qPolyEdt->text());
-        m_resultLbl->setText(m_subtractionBtn->text() + " = " + (p - q));
+        const auto& textP = m_pPolyEdt->text();
+        const auto& textQ = m_qPolyEdt->text();
+        
+        if(!textP.isEmpty() && !textQ.isEmpty()) {
+            const auto& p = Parser::parse(textP);
+            const auto& q = Parser::parse(textQ);
+            m_resultLbl->setText(m_subtractionBtn->text() + " = " + (p - q));
+        }
     });
     QObject::connect(m_multiplicationBtn, &QPushButton::clicked, m_resultLbl, [this]() {
-        const auto& p = Parser::parse(m_pPolyEdt->text());
-        const auto& q = Parser::parse(m_qPolyEdt->text());
-        m_resultLbl->setText(m_multiplicationBtn->text() + " = " + (p * q));
+        const auto& textP = m_pPolyEdt->text();
+        const auto& textQ = m_qPolyEdt->text();
+        
+        if(!textP.isEmpty() && !textQ.isEmpty()) {
+            const auto& p = Parser::parse(textP);
+            const auto& q = Parser::parse(textQ);
+            m_resultLbl->setText(m_multiplicationBtn->text() + " = " + (p * q));
+        }
     });
 }
